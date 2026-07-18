@@ -65,8 +65,8 @@ table{width:100%;border-collapse:collapse;background:var(--panel)}th,td{padding:
   background:rgba(255,255,255,.08);
   color:var(--muted,#a5acb8);
 }
-.context-panel details[open] .summary-hint{font-size:0}
-.context-panel details[open] .summary-hint::after{content:"접기";font-size:.82rem}
+.context-panel details:not([open]) .summary-hint{font-size:0}
+.context-panel details:not([open]) .summary-hint::after{content:"펼치기";font-size:.82rem}
 .context-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -104,7 +104,99 @@ table{width:100%;border-collapse:collapse;background:var(--panel)}th,td{padding:
 </div>
 </header>
 
-<nav><a href="#schedule">주간 일정</a><a href="#workout">운동 상세</a><a href="#review">재검토</a><a href="#advisor">최종 리뷰</a><a href="#nutrition">영양</a><a href="#rules">진행 규칙</a></nav>
+<nav><a href="#context">설계 맥락</a><a href="#schedule">주간 일정</a><a href="#workout">운동 상세</a><a href="#review">재검토</a><a href="#advisor">최종 리뷰</a><a href="#nutrition">영양</a><a href="#rules">진행 규칙</a></nav>
+
+
+<section id="context" class="context-panel">
+  <details open>
+    <summary>
+      <span>
+        <b>이 프로그램이 이렇게 설계된 이유</b>
+        <small>내 목표·체형·생활·장비·건강 맥락</small>
+      </span>
+      <span class="summary-hint">접기</span>
+    </summary>
+
+    <div class="context-grid">
+      <article class="context-card">
+        <h3>목표</h3>
+        <ul>
+          <li>165cm · 67.5kg에서 체중만 늘리기보다 <b>어깨가 넓고 듬직해 보이는 상체</b>를 만든다.</li>
+          <li>가슴 두께보다 <b>측면·후면 삼각근과 광배</b>를 키워 V라인을 강화한다.</li>
+          <li>공격적인 벌크업보다 체지방을 크게 늘리지 않는 <b>리컴포지션 또는 린 게인</b>을 우선한다.</li>
+        </ul>
+      </article>
+
+      <article class="context-card">
+        <h3>현재 체형 특성</h3>
+        <ul>
+          <li>가슴은 비교적 잘 발달하는 편이다.</li>
+          <li>승모근도 자극을 잘 받고 쉽게 올라오는 편이다.</li>
+          <li>따라서 가슴·상부 승모보다 <b>어깨 폭, 후면 어깨, 광배 폭</b>을 우선한다.</li>
+          <li>슈러그·프론트 레이즈·업라이트 로우는 현재 목표에서 제외한다.</li>
+        </ul>
+      </article>
+
+      <article class="context-card">
+        <h3>운동 경험과 현재 능력</h3>
+        <ul>
+          <li>푸시업 약 60회를 3세트로 수행 가능하며 과거에는 약 100회까지 했다.</li>
+          <li>스쿼트 약 60회를 2세트로 수행 가능하며 과거에는 약 100회까지 했다.</li>
+          <li>반복만 늘리기보다 느린 하강·가동범위·중량 증가로 난도를 높인다.</li>
+        </ul>
+      </article>
+
+      <article class="context-card">
+        <h3>생활 일정</h3>
+        <ul>
+          <li>목요일과 금요일은 재택근무라 긴 운동 시간을 확보하기 쉽다.</li>
+          <li>주 3회 근력운동을 기본으로 하며 월요일은 중간 길이, 목·금요일은 메인 세션이다.</li>
+          <li>화·수요일은 걷기와 가벼운 가동성, 토요일은 선택 운동, 일요일은 휴식이다.</li>
+        </ul>
+      </article>
+
+      <article class="context-card">
+        <h3>현재 장비</h3>
+        <ul>
+          <li>5kg 덤벨 2개, 10kg 덤벨 2개.</li>
+          <li>현재 장비로는 등과 하체가 먼저 한계에 도달할 가능성이 높다.</li>
+          <li>업그레이드 순서는 <b>철봉 → 한 손당 20kg 이상 가변덤벨 → 각도 조절 벤치</b>다.</li>
+        </ul>
+      </article>
+
+      <article class="context-card">
+        <h3>건강 맥락</h3>
+        <ul>
+          <li>중성지방 367mg/dL, HDL 38mg/dL, 지방간, HbA1c 5.8% 등 대사 건강을 함께 고려한다.</li>
+          <li>크레아티닌 1.14mg/dL, eGFR 80이었고 소변 단백 미량과 현미경적 혈뇨가 있어 재검이 권고됐다.</li>
+          <li>단백질은 하루 110–130g을 목표로 하되, 크레아틴은 소변 재검 뒤 판단한다.</li>
+          <li>스타틴 시작 여부는 의료진과 상의하며 운동은 약물의 대체가 아니라 병행 전략이다.</li>
+        </ul>
+      </article>
+
+      <article class="context-card">
+        <h3>설계 원칙</h3>
+        <ul>
+          <li>가슴과 승모는 유지 수준, 측면·후면 어깨와 광배는 성장 수준의 볼륨을 준다.</li>
+          <li>승모가 과하게 개입하면 무게나 반복 수를 낮추고 목을 길게 유지한다.</li>
+          <li>상한 반복을 2회 연속 달성하고도 2–3회 여유가 있으면 난도를 높인다.</li>
+          <li>통증, 저림, 관절 걸림이 있으면 해당 운동을 중단하고 자세 또는 운동을 교체한다.</li>
+        </ul>
+      </article>
+
+      <article class="context-card">
+        <h3>프로그램 우선순위</h3>
+        <ol>
+          <li>측면 삼각근</li>
+          <li>광배 및 등 폭</li>
+          <li>후면 삼각근</li>
+          <li>하체와 코어</li>
+          <li>가슴과 전면 어깨는 유지</li>
+        </ol>
+      </article>
+    </div>
+  </details>
+</section>
 
 <section id="schedule">
 <div class="header"><h2>재택일 중심 주간 일정</h2><span class="muted">목·금은 연속이므로 부위를 분리</span></div>
