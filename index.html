@@ -36,6 +36,58 @@ table{width:100%;border-collapse:collapse;background:var(--panel)}th,td{padding:
 .exercise strong{display:block}
 
 @media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}.grid3,.grid2{grid-template-columns:1fr}.hero{padding:27px 20px}}
+
+.context-panel{margin:18px 0 26px}
+.context-panel details{
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;
+  background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));
+  overflow:hidden;
+}
+.context-panel summary{
+  cursor:pointer;
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  padding:20px 22px;
+  user-select:none;
+}
+.context-panel summary::-webkit-details-marker{display:none}
+.context-panel summary b{display:block;font-size:1.08rem}
+.context-panel summary small{display:block;margin-top:5px;color:var(--muted,#a5acb8);font-size:.88rem}
+.summary-hint{
+  white-space:nowrap;
+  font-size:.82rem;
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  color:var(--muted,#a5acb8);
+}
+.context-panel details[open] .summary-hint{font-size:0}
+.context-panel details[open] .summary-hint::after{content:"접기";font-size:.82rem}
+.context-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  padding:0 16px 16px;
+}
+.context-card{
+  padding:17px 18px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:16px;
+  background:rgba(0,0,0,.12);
+}
+.context-card h3{margin:0 0 10px;font-size:1rem}
+.context-card ul,.context-card ol{margin:0;padding-left:19px}
+.context-card li{margin:7px 0;line-height:1.55;color:var(--muted,#c1c6cf)}
+.context-card b{color:var(--text,#fff)}
+@media(max-width:760px){
+  .context-grid{grid-template-columns:1fr}
+  .context-panel summary{padding:18px}
+}
+
 </style>
 </head>
 <body>
